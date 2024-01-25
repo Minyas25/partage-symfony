@@ -31,7 +31,7 @@ class AnnonceController extends AbstractController
         return $this->json($annonce);
     }
 
-    #[Route('/{id}', methods: 'POST')]
+    #[Route('/annonce-create', methods: 'POST')]
     public function add(Person $person, Request $request, SerializerInterface $serializer): JsonResponse {
         try {
             $annonce = $serializer->deserialize($request->getContent(), Annonce::class, 'json');
